@@ -1,0 +1,270 @@
+/* Root */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #e74c3c;
+  --dark-color: #212529;
+  --light-bg: #f8f9fa;
+  --white: #ffffff;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-size-base: 16px;
+  --spacing-unit: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "serif";
+  line-height: 1.6;
+  color: var(--dark-color);
+  overflow-x: hidden;
+}
+
+/* Header Navbar */
+.header-main {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--white);
+}
+
+.navbar {
+  padding: 1rem 0;
+}
+
+.brand-text {
+  font-size: 1, 25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--dark-color);
+  transition: var(--transition);
+  padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(
+    135deg,
+    #016b61 0%,
+    #9ecfd4 100%
+  ); /*warna background selamat datang*/
+  color: var(--white); /*warna tulisan*/
+  padding: 100px 0;
+  position: relative;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+}
+
+.hero .btn {
+  position: relative;
+  z-index: 1;
+  padding: 12px 32px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: var(--transition);
+}
+
+.hero .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Sejarah */
+.sejarah {
+  background: var(--white);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+/* garis bawah di sejarah, fasilitas suryatmajan */
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+/* jarak antara tulisan */
+.sejarah-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  color: #555;
+}
+
+/* Fasilitas */
+.fasilitas {
+  background: var(--light-bg);
+}
+
+/* Styling Fasilitas */
+/* Kolom fasilitas */
+.facility-card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+  height: 100%;
+  border: 2px solid transparent;
+}
+
+/* Ikon fasilitas yang di dalam lingkaran */
+.facility-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem auto;
+  background: linear-gradient(135deg, var(--primary-color), #667eea);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: var(--transition);
+}
+
+/* untuk image di dalam fasilitas card */
+.facility-icon img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.facility-card:hover .facility-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Judul Kartu Fasilitas */
+.facility-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--dark-color);
+}
+
+.facility-desc {
+  font-size: 1rem;
+  color: black;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Footer */
+.footer {
+  background: var(--dark-color);
+  border-top: 3px solid var(--primary-color);
+  margin-top: 5rem;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .facility-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-img {
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+  }
+
+  .brand-text {
+    font-size: 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .facility-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .facility-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}

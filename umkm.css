@@ -1,0 +1,387 @@
+/* Root */
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --dark-color: #212529;
+  --light-bg: #f8f9fa;
+  --white: #ffffff;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "serif";
+  line-height: 1.6;
+  color: var(--dark-color);
+  background: var(--light-bg);
+}
+
+/* Header Navbar */
+.header-main {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--white);
+}
+
+.navbar {
+  padding: 1rem 0;
+}
+
+.logo-img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  margin-right: 12px;
+}
+
+.brand-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--dark-color);
+  transition: var(--transition);
+  padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+}
+
+/* Header */
+.page-header {
+  background: linear-gradient(135deg, #016b61 0%, #9ecfd4 100%);
+  color: var(--white);
+  padding: 60px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* opacity bertujuan untuk mengatur kecerahan teks */
+.page-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+/* UMKM Section */
+.umkm-section {
+  padding: 4rem 0;
+}
+
+/* Kotak UMKM */
+.umkm-card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover styling waktu kartu umkm di pointer */
+.umkm-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Ukuran gambar di kartu umkm */
+.umkm-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: var(--light-bg);
+  position: relative;
+}
+
+.umkm-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+/* Scale disini mengatur besar kecilnya kotak umkm saat di hover */
+/* brightness mengatur kecerahan kotak umkm saat di hover */
+.umkm-card:hover {
+  transform: scale(1.05);
+  filter: brightness(0.95);
+}
+
+/* Scale ukuran foto di dalam kotak umkm (zoom in, zoom out) semakin besar scale semakin zoom in */
+.umkm-image img {
+  transform: scale(1);
+  filter: brightness(0.9);
+}
+
+/* Mengatur kotak UMKM */
+/* flex direction mengatur urutan tulisan di dalam kotak umkm */
+.umkm-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nama Umkm Styling */
+.umkm-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Kategori styling */
+.umkm-category {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+/* Deskripsi Styling */
+.umkm-short-desc {
+  color: grey;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+/* Ikons sosmed */
+.umkm-social {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+  border-top: 1px solid var(--light-bg);
+  padding-top: 1rem;
+}
+
+.umkm-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--light-bg);
+  color: var(--primary-color);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.umkm-social a:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: scale(1.15);
+}
+
+.umkm-social svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Modal */
+.modal-content {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background: linear-gradient(135deg, var(--primary-color), #e5e9c5);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.modal-header .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-body img {
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+}
+
+.modal-body .badge {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+.nodal-body strong {
+  color: var(--primary-color);
+}
+
+.modal-body ul {
+  margin-left: 1.5rem;
+  line-height: 1.8;
+}
+
+.modal-body ul li {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+/* Footer */
+.footer {
+  background: var(--dark-color);
+  border-top: 3px solid var(--primary-color);
+  margin-top: 5rem;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+  }
+
+  .page-header {
+    padding: 40px 0;
+  }
+
+  .umkm-image {
+    height: 200px;
+  }
+
+  .umkm-body {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-img {
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+  }
+
+  .brand-text {
+    font-size: 1rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .umkm-section {
+    padding: 1.5rem 0;
+  }
+
+  .umkm-image {
+    height: 180px;
+  }
+
+  .umkm-card {
+    margin-bottom: 1rem;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* === ACCESSIBILITY === */
+a:focus,
+button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.umkm-card:focus-within {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* === UTILITY CLASSES === */
+.text-center {
+  text-align: center;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.py-5 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.bg-light {
+  background: var(--light-bg);
+}
